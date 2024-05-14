@@ -27,6 +27,16 @@
 							"type": "ParquetReadSettings"
 						}
 					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
@@ -73,6 +83,12 @@
 				"inputs": [
 					{
 						"referenceName": "TemperatureDS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "TemperaturesJSONDS",
 						"type": "DatasetReference"
 					}
 				]
