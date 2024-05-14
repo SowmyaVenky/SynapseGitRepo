@@ -106,3 +106,6 @@
   
 <img src="./images/img_034.png" />
 
+* Next we need to try to take all these artifacts from one Synapse workspace and push it to another Synapse workspace. The fabric migration project gives us some sample scripts that we can use.
+* https://github.com/microsoft/fabric-migration/blob/main/data-engineering/utils/util.py
+  
