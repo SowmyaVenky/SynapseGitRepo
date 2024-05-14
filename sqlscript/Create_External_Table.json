@@ -1,0 +1,18 @@
+{
+	"name": "Create_External_Table",
+	"properties": {
+		"description": "Creates a lakehouse table from ADLS data",
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseParquetFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] \n\tWITH ( FORMAT_TYPE = PARQUET)\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'venkyfs1001_venkyadls1001_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [venkyfs1001_venkyadls1001_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://venkyfs1001@venkyadls1001.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE dbo.air_quality_temperatures (\n\t[latitude] float,\n\t[longitude] float,\n\t[time] nvarchar(4000),\n\t[temperature_2m] float\n\t)\n\tWITH (\n\tLOCATION = 'AirQualityIndexWithTemp/**',\n\tDATA_SOURCE = [venkyfs1001_venkyadls1001_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseParquetFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.air_quality_temperatures\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "temperatures_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
