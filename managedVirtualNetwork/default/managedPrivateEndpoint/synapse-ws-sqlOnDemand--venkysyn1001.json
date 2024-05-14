@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sqlOnDemand--venkysyn1001",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/80ea84e8-afce-4851-928a-9e2219724c69/resourceGroups/1-e741a4ff-playground-sandbox/providers/Microsoft.Synapse/workspaces/venkysyn1001",
+		"groupId": "sqlOnDemand",
+		"fqdns": [
+			"venkysyn1001-ondemand.5efbb8b9-a025-4854-a973-157d90b311a0.sql.azuresynapse.net"
+		]
+	}
+}

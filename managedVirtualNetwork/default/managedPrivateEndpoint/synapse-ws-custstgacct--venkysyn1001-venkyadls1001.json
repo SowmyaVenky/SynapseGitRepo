@@ -1,0 +1,7 @@
+{
+	"name": "synapse-ws-custstgacct--venkysyn1001-venkyadls1001",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/80ea84e8-afce-4851-928a-9e2219724c69/resourceGroups/1-e741a4ff-playground-sandbox/providers/Microsoft.Storage/storageAccounts/venkyadls1001",
+		"groupId": "dfs"
+	}
+}
