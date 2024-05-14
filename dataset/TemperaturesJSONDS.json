@@ -1,0 +1,35 @@
+{
+	"name": "TemperaturesJSONDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "AirQualityWithTempJSON",
+				"fileSystem": "venkyfs1001"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"latitude": {
+					"type": "number"
+				},
+				"longitude": {
+					"type": "number"
+				},
+				"time": {
+					"type": "string"
+				},
+				"temperature_2m": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}
