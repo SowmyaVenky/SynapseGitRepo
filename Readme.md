@@ -109,9 +109,7 @@
 
 <img src="./images/img_038.png" />
 
-<img src="./images/img_038.png" />
-
-<img src="./images/img_038.png" />
+<img src="./images/img_039.png" />
 
 * Notice here that we are creating a new linked service that maps to the storage account via the access keys. This is not recommended in prod, but this is the only way we can get Synapse pipelines to work inside acloud guru sandbox. 
 
