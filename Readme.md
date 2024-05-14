@@ -103,12 +103,28 @@
 <img src="./images/img_033.png" />
 
 * This demonstrates a simple data copy pipeline. The data is taken from the main parquet folder and then pushed to another folder in JSON format. Essentially we create 1 linked service to establish connections to ADLS, 2 integration datasets one for the source side and one for the sink side and create a pipeline with a copy task to enable the copy to happen while converting from parquet to JSON.
-  
+
+
+<img src="./images/img_037.png" />
+
+<img src="./images/img_038.png" />
+
+<img src="./images/img_038.png" />
+
+<img src="./images/img_038.png" />
+
+* Notice here that we are creating a new linked service that maps to the storage account via the access keys. This is not recommended in prod, but this is the only way we can get Synapse pipelines to work inside acloud guru sandbox. 
+
+<img src="./images/img_040.png" />
+
+* This is the sink dataset, in JSON format. Note both use the newly created linked service to get to the storage account.
+
+<img src="./images/img_040.png" />
+
 <img src="./images/img_034.png" />
 
 <img src="./images/img_035.png" />
 <img src="./images/img_036.png" />
-<img src="./images/img_037.png" />
 
 * Next we need to try to take all these artifacts from one Synapse workspace and push it to another Synapse workspace. The fabric migration project gives us some sample scripts that we can use.
 * https://github.com/microsoft/fabric-migration/blob/main/data-engineering/utils/util.py
