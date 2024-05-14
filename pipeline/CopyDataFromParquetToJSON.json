@@ -1,6 +1,7 @@
 {
-	"name": "Pipeline 2",
+	"name": "CopyDataFromParquetToJSON",
 	"properties": {
+		"description": "Copy Parquet data to JSON format using copy task",
 		"activities": [
 			{
 				"name": "TestCopyData",
@@ -24,16 +25,6 @@
 						},
 						"formatSettings": {
 							"type": "ParquetReadSettings"
-						}
-					},
-					"sink": {
-						"type": "JsonSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "PreserveHierarchy"
-						},
-						"formatSettings": {
-							"type": "JsonWriteSettings"
 						}
 					},
 					"enableStaging": false,
@@ -82,12 +73,6 @@
 				"inputs": [
 					{
 						"referenceName": "TemperatureDS",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "Json1",
 						"type": "DatasetReference"
 					}
 				]
