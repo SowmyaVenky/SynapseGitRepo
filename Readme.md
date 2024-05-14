@@ -12,5 +12,27 @@
 
 * Now we will connect this synapse workspace to a blank git repository to allow us to demonstrate the usage of the version control capabilities. 
 
+<img src="./images/img_003.png" />
 
-"# SynapseGitRepo" 
+<img src="./images/img_004.png" />
+
+<img src="./images/img_005.png" />
+
+<img src="./images/img_006.png" />
+
+<img src="./images/img_007.png" />
+
+<img src="./images/img_008.png" />
+
+<img src="./images/img_009.png" />
+
+<img src="./images/img_010.png" />
+
+<img src="./images/img_011.png" />
+
+<img src="./images/img_012.png" />
+
+<img src="./images/img_013.png" />
+
+<img src="./images/img_014.png" />
+
