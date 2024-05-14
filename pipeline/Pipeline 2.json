@@ -1,0 +1,100 @@
+{
+	"name": "Pipeline 2",
+	"properties": {
+		"activities": [
+			{
+				"name": "TestCopyData",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "ParquetReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"path": "latitude"
+								}
+							},
+							{
+								"source": {
+									"name": "longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"path": "longitude"
+								}
+							},
+							{
+								"source": {
+									"name": "time",
+									"type": "String"
+								},
+								"sink": {
+									"path": "time"
+								}
+							},
+							{
+								"source": {
+									"name": "temperature_2m",
+									"type": "Double"
+								},
+								"sink": {
+									"path": "temperature_2m"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "TemperatureDS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-05-14T19:20:22Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}
