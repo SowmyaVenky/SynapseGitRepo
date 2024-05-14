@@ -117,7 +117,7 @@
 
 * This is the sink dataset, in JSON format. Note both use the newly created linked service to get to the storage account.
 
-<img src="./images/img_040.png" />
+<img src="./images/img_041.png" />
 
 <img src="./images/img_034.png" />
 
