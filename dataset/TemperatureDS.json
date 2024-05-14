@@ -1,0 +1,21 @@
+{
+	"name": "TemperatureDS",
+	"properties": {
+		"description": "Temperature dataset",
+		"linkedServiceName": {
+			"referenceName": "venkysyn1001-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "AirQualityIndexWithTemp",
+				"fileSystem": "venkyfs1001"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
